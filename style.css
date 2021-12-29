@@ -41,18 +41,29 @@
   	}
 }
 
-#header {
+#scrollImage {
 	overflow: hidden;
 	opacity: 0%;
 	width: 100%;
 	height: 56vw;
 	margin-left: -8px;
 	margin-right: -8px;
-	margin-top: -8px;
 	background: url(Images/dreamdesign.jpg);
-	background-size: 130%;
+	background-size: 100%;
 	background-position: center;
 	background-attachment: fixed;
+	position: absolute;
+	animation: 3s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeBackground;
+	animation-fill-mode: forwards;
+}
+
+#header2 {
+	overflow: hidden;
+	opacity: 0%;
+	width: 100vw;
+	height: 56vw;
+	margin-left: -28px;
+	margin-top: -8px;
 	position: absolute;
 	animation: 3s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeBackground;
 	animation-fill-mode: forwards;
@@ -81,6 +92,25 @@ div.aboutText {
 	font-family: eurostile-extended,sans-serif;
 	font-weight: 400;
 	font-style: italic;
+}
+
+div.aboutTextLink {
+	margin-left:4vw;
+	margin-right:4vw;
+	padding-left: 10vw;
+	padding-right: 10vw;
+	font-size: 2vw;
+	font-family: eurostile-extended,sans-serif;
+	font-weight: 400;
+	font-style: italic;
+	opacity: 40%;
+	animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeInvisible;
+}
+
+div.aboutTextLink:hover {
+	opacity: 40%;
+	animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeVisible;
+	opacity: 100%
 }
 
 div.mediumFooterText {

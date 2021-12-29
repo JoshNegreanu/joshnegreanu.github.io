@@ -14,14 +14,10 @@
 
 	<body style="background-color:#1F1F1F;">
 		
-		<div id="header"></div>
-		
-		<script type="text/javascript">
-			const bg = document.getElementById('header');
-			window.addEventListener('scroll', function() {
-			   bg.style.backgroundSize = 130 - +window.pageYOffset/50+'%';
-		   	})
-		</script>
+		<video id="header2" autoplay muted loop>
+		  <source src="movie2.mp4" type="video/mp4">
+		  Your browser does not support HTML video.
+		</video>
 		
 		<div class="smallBreaker"></div>
 		
@@ -64,13 +60,33 @@
 		</div>
 		
 		<div class="smallTitle" style="color:white;">purpose</div>
-		<div class="aboutText" style="color:white;">dreamdesign was the result of a month-long senior project that encouraged students to learn something new. In this case, Josh decided to learn how to design a house and CAD it in Revit.</div>
+		<div class="aboutText" style="color:white;"><b>dreamdesign</b> was the result of a month-long senior project that encouraged students to learn something new. In this case, Josh decided to learn how to design a house and CAD it in Revit.</div>
 		<div class="breaker"></div>
+		
+		<div id="scrollImage" style="height:20vw"></div>
+		
+		<script type="text/javascript">
+			const bg = document.getElementById('scrollImage');
+			window.addEventListener('scroll', function() {
+			   bg.style.backgroundSize = 100 + +window.pageYOffset/50+'%';
+		   	})
+		</script>
+		
+		<div class="breaker"></div>
+		<div class="breaker"></div>
+		<div class="breaker"></div>
+		<div class="breaker"></div>
+		<div class="breaker"></div>
+		
 
 		<div class="smallTitle" style="color:white;">project info</div>
 		<div class="aboutText" style="color:white;">Along the way, he consulted three local architects and discussed his ideas, incorporating their feedback into the final design. He also experimented with Enscape, a rendering engine, to provide realistic depictions of the house. The structure can also be explored in virtual reality.</div>
 		<div class="smallBreaker"></div>
 		<div class="aboutText" style="color:white;">With this newfound interest in architecture, Josh is once again exploring the idea of designing a new house. More info soon.</div>
+		<div class="smallBreaker"></div>
+		<a style="text-decoration: none;" href="https://josh-negreanu.medium.com/i-knew-nothing-about-architecture-heres-how-i-designed-a-house-1784178c2268?source=user_profile---------0-------------------------------" target="_blank">
+			<div class="aboutTextLink" style="color:white;">Read the Medium article here.</div>
+		</a>
 		<div class="breaker"></div>
 		
 		<footer style="background-color:gainsboro;">
