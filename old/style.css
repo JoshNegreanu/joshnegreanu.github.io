@@ -1,0 +1,232 @@
+@charset "utf-8";
+/* CSS Document */
+
+@keyframes slideInBottom {
+  	25% {
+		transform: translateY(2vw);
+		opacity: 0%;
+  	}
+  	100% {
+		transform: translateY(0);
+		opacity: 100%;
+  	}
+}
+
+@keyframes becomeBackground {
+  	25% {
+		transform: translateY(-2vw);
+		opacity: 0%;
+  	}
+  	100% {
+		transform: translateY(0);
+		opacity: 100%;
+  	}
+}
+
+@keyframes becomeInvisible {
+  	0% {
+		opacity: 100%;
+  	}
+  	100% {
+		opacity: 40%;
+  	}
+}
+
+@keyframes becomeVisible {
+  	0% {
+		opacity: 40%;
+  	}
+  	100% {
+		opacity: 100%;
+  	}
+}
+
+#scrollImage {
+	overflow: hidden;
+	opacity: 0%;
+	width: 100%;
+	margin-left: -8px;
+	margin-right: -8px;
+	background: url(Images/dreamdesign.jpg);
+	background-size: 100%;
+	background-position: center;
+	background-attachment: fixed;
+	position: absolute;
+	animation: 3s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeBackground;
+	animation-fill-mode: forwards;
+}
+
+#header2 {
+	overflow: hidden;
+	opacity: 0%;
+	width: 100vw;
+	margin-left: -28px;
+	margin-top: -8px;
+	position: absolute;
+	animation: 3s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeBackground;
+	animation-fill-mode: forwards;
+}
+
+div {
+ 	font-family: eurostile-extended,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+div.smallTitle {
+	margin-left:4vw;
+	font-size: 1vw;
+	font-family: orpheuspro,serif;
+	font-weight: 500;
+	font-style: normal;
+}
+
+div.aboutText {
+	margin-left:4vw;
+	margin-right:4vw;
+	padding-left: 10vw;
+	padding-right: 10vw;
+	font-size: 2vw;
+	font-family: eurostile-extended,sans-serif;
+	font-weight: 400;
+	font-style: italic;
+}
+
+div.aboutTextLink {
+	margin-left:4vw;
+	margin-right:4vw;
+	padding-left: 10vw;
+	padding-right: 10vw;
+	font-size: 2vw;
+	font-family: eurostile-extended,sans-serif;
+	font-weight: 400;
+	font-style: italic;
+	opacity: 40%;
+	animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeInvisible;
+}
+
+div.aboutTextLink:hover {
+	opacity: 40%;
+	animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeVisible;
+	opacity: 100%
+}
+
+div.mediumFooterText {
+	font-size: 1.5vw;
+	font-family: eurostile-extended,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	text-align: center;
+}
+
+div.smallFooterText {
+	font-size: 0.75vw;
+	font-family: eurostile-extended,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	text-align: center;
+	opacity: 40%;
+	animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeInvisible;
+}
+
+div.smallFooterText:hover {
+	opacity: 40%;
+	animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeVisible;
+	opacity: 100%
+}
+
+div.breaker {
+	padding-bottom: 5vw;
+}
+
+div.smallBreaker {
+	padding-bottom: 2vw;
+}
+
+.topnav {
+	overflow: hidden;
+	text-align: center;
+}
+
+.topnav a {
+	float: left;
+	color: black;
+	font-size: 2.8vw;
+	padding: 0vw 0vw 0vw 0vw;
+	text-decoration: none;
+	position: relative;
+}
+
+.topnav a.active {
+	font-size: 2.8vw;
+}
+
+.topnav a.right {
+	float: right;
+	color: black;
+	font-size: 1.5vw;
+	padding: 1vw 1.8vw 0vw 0vw;
+	text-decoration: none;
+	opacity: 40%;
+	animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeInvisible;
+}
+
+.topnav a.right:hover {
+	color: black;
+	animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeVisible;
+	opacity: 100%;
+}
+
+.topnav a.icon {
+	float: right;
+	padding: 0.1vw 0vw 0vw 1vw;
+}
+
+img.hover{
+	opacity: 0%;
+	padding-top: 5vw;
+	padding-right: 6vw;
+	padding-bottom: 5vw;
+	padding-left: 10vw;
+	animation: 3s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 slideInBottom;
+	animation-fill-mode: forwards;
+}
+
+img.icon {
+	padding: 1.4vw 0.2vw 0vw 0vw;
+	opacity: 40%;
+	animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeInvisible;
+	height: 1.4vw;
+	width: 1.4vw;
+}
+
+img.icon:hover {
+	padding: 1.4vw 0.2vw 0vw 0vw;
+	animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeVisible;
+	opacity: 100%
+}
+
+footer {
+	font-size: 1.5vw;
+	font-family: eurostile-extended,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	text-align: center;
+	padding: 4vw;
+	background-color:#1F1F1F;
+	color: white;
+	margin-left: -8px;
+	margin-right: -8px;
+	margin-bottom: -8px;
+}
+
+.column {
+	display:block;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

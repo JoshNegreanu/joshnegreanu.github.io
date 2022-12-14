@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
+
 @keyframes slideInBottom {
   	25% {
 		transform: translateY(2vw);
@@ -24,22 +25,230 @@
 }
 
 @keyframes becomeInvisible {
-  	0% {
-		opacity: 100%;
+    0% {
+		-webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
   	}
   	100% {
-		opacity: 40%;
+        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0px);
   	}
 }
 
 @keyframes becomeVisible {
   	0% {
-		opacity: 40%;
+		-webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0px);
   	}
   	100% {
-		opacity: 100%;
+		-webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
   	}
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.topnav {
+    position: fixed;
+    width: 100%;
+    
+    animation: 1s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeInvisible;
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    
+
+}
+
+.topnav:hover {
+    animation: 1s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeVisible;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+a {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight:lighter;
+	float: left;
+	
+	font-size: 12px;
+	margin: 20px;
+    position: relative;
+    color: black;
+    text-decoration: none;
+}
+
+a.active::after {
+    transform: scaleX(1);
+}
+
+a:hover {
+    /*
+    color: black;
+    text-decoration: line-through;
+    text-decoration-color: black;
+    text-decoration-thickness: 1px;
+    */
+}
+
+a:hover::after {
+    transform: scaleX(1);
+}
+
+a::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+}
+
+.botnav {
+    width: 100%;
+	position: fixed;
+	bottom: 0px;
+	background-color: black;
+
+	/*
+	-webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+	*/
+}
+
+#scroll-text {
+    /* animation properties */
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    
+    -moz-animation: my-animation 15s linear infinite;
+    -webkit-animation: my-animation 15s linear infinite;
+    animation: my-animation 15s linear infinite;
+    color: black;
+}
+  
+/* for Firefox */
+@-moz-keyframes my-animation {
+    from { -moz-transform: translateX(100%); }
+    to { -moz-transform: translateX(-100%); }
+}
+  
+/* for Chrome */
+@-webkit-keyframes my-animation {
+    from { -webkit-transform: translateX(100%); }
+    to { -webkit-transform: translateX(-100%); }
+}
+  
+@keyframes my-animation {
+    from {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    }
+    to {
+    -moz-transform: translateX(175%);
+    -webkit-transform: translateX(175%);
+    transform: translateX(175%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.smallTitle {
+	font-family: sans-serif;
+    
+    font-weight:lighter;
+	float: left;
+	color:black;
+	font-size: 12px;
+	margin: 20px;
+	text-decoration: none;
+    width: 50%;
+}
+
+.smallTitle2 {
+	font-family: sans-serif;
+    
+    font-weight:lighter;
+	float: left;
+	color:white;
+	font-size: 12px;
+	margin: 20px;
+	text-decoration: none;
+    width: 50%;
+}
+
+.aboutText {
+    font-family: sans-serif;
+    
+    font-weight:lighter;
+	float: left;
+	color:black;
+	font-size: 12px;
+	margin: 20px;
+    padding-left: 100px;
+	text-decoration: none;
+    width: 50%;
+}
+
+
+
+
+
+
+
+
+#trailer {
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    /*
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    */
+    background-color: black;
+    
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 10000;
+    
+    pointer-events: none;
+    opacity: 0;
+
+}
+
+
+
+
+
+
 
 #scrollImage {
 	overflow: hidden;
@@ -71,25 +280,6 @@ div {
  	font-family: eurostile-extended,sans-serif;
 	font-weight: 400;
 	font-style: normal;
-}
-
-div.smallTitle {
-	margin-left:4vw;
-	font-size: 1vw;
-	font-family: orpheuspro,serif;
-	font-weight: 500;
-	font-style: normal;
-}
-
-div.aboutText {
-	margin-left:4vw;
-	margin-right:4vw;
-	padding-left: 10vw;
-	padding-right: 10vw;
-	font-size: 2vw;
-	font-family: eurostile-extended,sans-serif;
-	font-weight: 400;
-	font-style: italic;
 }
 
 div.aboutTextLink {
@@ -143,40 +333,6 @@ div.smallBreaker {
 	padding-bottom: 2vw;
 }
 
-.topnav {
-	overflow: hidden;
-	text-align: center;
-}
-
-.topnav a {
-	float: left;
-	color: black;
-	font-size: 2.8vw;
-	padding: 0vw 0vw 0vw 0vw;
-	text-decoration: none;
-	position: relative;
-}
-
-.topnav a.active {
-	font-size: 2.8vw;
-}
-
-.topnav a.right {
-	float: right;
-	color: black;
-	font-size: 1.5vw;
-	padding: 1vw 1.8vw 0vw 0vw;
-	text-decoration: none;
-	opacity: 40%;
-	animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeInvisible;
-}
-
-.topnav a.right:hover {
-	color: black;
-	animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeVisible;
-	opacity: 100%;
-}
-
 .topnav a.icon {
 	float: right;
 	padding: 0.1vw 0vw 0vw 1vw;
@@ -204,20 +360,6 @@ img.icon:hover {
 	padding: 1.4vw 0.2vw 0vw 0vw;
 	animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeVisible;
 	opacity: 100%
-}
-
-footer {
-	font-size: 1.5vw;
-	font-family: eurostile-extended,sans-serif;
-	font-weight: 400;
-	font-style: normal;
-	text-align: center;
-	padding: 4vw;
-	background-color:#1F1F1F;
-	color: white;
-	margin-left: -8px;
-	margin-right: -8px;
-	margin-bottom: -8px;
 }
 
 .column {
