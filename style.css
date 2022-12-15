@@ -115,7 +115,6 @@ a::after {
 	position: fixed;
 	bottom: 0px;
 	background-color: black;
-	padding: 20px;
 
 	/*
 	-webkit-backdrop-filter: blur(10px);
@@ -199,11 +198,13 @@ a::after {
     font-weight:lighter;
 	color:white;
 	font-size: 12px;
+	margin: 20px;
 	text-decoration: none;
 }
 
 .smallTitle3 {
 	font-family: sans-serif;
+	margin: 20px;
     
     font-weight:lighter;
 	color:white;
