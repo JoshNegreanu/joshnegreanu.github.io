@@ -13,6 +13,16 @@
 		<link rel="stylesheet" href="style.css">
 
         <link rel="icon" href="/images/favicon.ico">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(window).scroll(function(){
+                    $('.smallCenteredTitle').css("opacity", 1- $(window).scrollTop() / 75);
+                })
+            })
+        </script>
 	</head>
 
 	<body>
@@ -31,9 +41,12 @@
         </div>
 
         <div class="breaker"></div>
+        <div class="smallBreaker"></div>
 
-        <div class="smallCenteredTitle">please scroll down</div>
+        <div class="smallCenteredTitle">hi. my name is josh.</div>
+        <div class="smallCenteredTitle" style="color: gray">you can scroll down to find out more info about me.</div>
 
+        <div class="smallBreaker"></div>
         <div class="smallBreaker"></div>
 
         <img src="images/me.jpg" class="center" alt="me">

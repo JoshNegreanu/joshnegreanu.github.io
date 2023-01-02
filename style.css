@@ -124,15 +124,6 @@ a.active::after {
     transform: scaleX(1);
 }
 
-a:hover {
-    /*
-    color: black;
-    text-decoration: line-through;
-    text-decoration-color: black;
-    text-decoration-thickness: 1px;
-    */
-}
-
 a:hover::after {
     transform: scaleX(1);
 }
@@ -233,13 +224,14 @@ a::after {
 
 .smallCenteredTitle {
 	font-family: sans-serif;
-	text-transform: uppercase;
     
     font-weight:lighter;
 	text-align: center;
 	color:black;
 	font-size: 12px;
 	margin: 20px;
+	margin-top: 0;
+	margin-bottom: 0;
 	text-decoration: none;
 }
 
