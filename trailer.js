@@ -10,6 +10,17 @@ document.onmousemove = function(e) {
 }
 */
 
+$(window).resize(function() {
+    var width = $(window).width();
+    if (width < 500) {
+       $('.MyClass').css('display', 'none');
+       $('.info').css('display', 'block');          
+    } else {
+      $('.MyClass').css('display', 'block');
+       $('.info').css('display', 'none');
+    }
+});
+
 const trailer = document.getElementById("trailer");
 
 const animateTrailer = (e, interacting) => {
