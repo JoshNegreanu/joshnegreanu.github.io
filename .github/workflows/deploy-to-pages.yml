@@ -10,7 +10,7 @@ jobs:
       upload-pages-artifact: true
   deploy-to-pages:
     runs-on: ubuntu-latest
-    needs: build-and-test
+    needs: build
     permissions:
       pages: write
       id-token: write
