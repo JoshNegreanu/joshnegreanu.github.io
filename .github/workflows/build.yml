@@ -11,3 +11,8 @@ jobs:
           node-version: 18
       - run: npm ci
       - run: npm run
+      - uses: actions/upload-artifact@v3
+      - if: ${{ inputs.upload-pages-artifact }}
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: dist/
