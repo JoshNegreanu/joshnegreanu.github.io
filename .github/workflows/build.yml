@@ -1,7 +1,8 @@
 name: Build
-
+on:
+  workflow_call:
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
