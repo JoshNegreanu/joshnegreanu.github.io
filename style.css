@@ -49,20 +49,20 @@
 /* animation to increase image size */
 @keyframes scale_up_img_big {
 	0% {
-	  width: 50%;
+	  width: 55%;
 	}
 	100% {
-		width: 52%;
+		width: 57%;
 	}
 }
 
 /* animation to decrease image size */
 @keyframes scale_down_img_big {
 	0% {
-	  width: 52%;
+	  width: 57%;
 	}
 	100% {
-		width: 50%;
+		width: 55%;
 	}
 }
 
@@ -212,13 +212,13 @@ img.center:hover {
 
 /* image */
 img.center_big {
-	width: 50%;
+	width: 55%;
 	animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 scale_down_img_big;
 }
 
 /* image hover */
 img.center_big:hover {
-	width: 52%;
+	width: 57%;
 	animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 scale_up_img_big;
 	
 }
