@@ -1,32 +1,12 @@
 @charset "utf-8";
-/* CSS Document */
 
-@keyframes slideInBottom {
-  	25% {
-		transform: translateY(2vw);
-		opacity: 0%;
-  	}
-  	100% {
-		transform: translateY(0);
-		opacity: 100%;
-  	}
-}
+/* ANIMATIONS */
 
-@keyframes becomeBackground {
-  	25% {
-		transform: translateY(-2vw);
-		opacity: 0%;
-  	}
-  	100% {
-		transform: translateY(0);
-		opacity: 100%;
-  	}
-}
-
-@keyframes becomeInvisible {
+/* blur background behind nav bar */
+@keyframes blur_nav {
     0% {
-		-webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px);
   	}
   	100% {
         -webkit-backdrop-filter: blur(0px);
@@ -34,18 +14,20 @@
   	}
 }
 
-@keyframes becomeVisible {
+/* unblur background behind nav bar */
+@keyframes unblur_nav {
   	0% {
 		-webkit-backdrop-filter: blur(0px);
         backdrop-filter: blur(0px);
   	}
   	100% {
-		-webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px);
   	}
 }
 
-@keyframes becomeBig {
+/* animation to increase image size */
+@keyframes scale_up_img {
 	0% {
 	  width: 35%;
 	}
@@ -54,7 +36,8 @@
 	}
 }
 
-@keyframes becomeSmall {
+/* animation to decrease image size */
+@keyframes scale_down_img {
 	0% {
 	  width: 37%;
 	}
@@ -63,70 +46,87 @@
 	}
 }
 
-@keyframes becomeOpaque {
+/* animation to increase image size */
+@keyframes scale_up_img_big {
 	0% {
-	  opacity: 0.5;
+	  width: 50%;
 	}
 	100% {
-		opacity: 1;
+		width: 52%;
 	}
 }
 
-@keyframes becomeSlightlyTransparent {
+/* animation to decrease image size */
+@keyframes scale_down_img_big {
 	0% {
-	  opacity: 1;
+	  width: 52%;
 	}
 	100% {
-		opacity: 0.5;
+		width: 50%;
 	}
 }
 
 
+/* HTML ELEMENTS */
 
+/* website background */
 body {
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-color: #fcfbf8;
 }
 
+/* nav bar static  */
 .topnav {
     position: fixed;
     width: 100%;
     
-    animation: 1s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeInvisible;
+    animation: 1s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 blur_nav;
     -webkit-backdrop-filter: blur(0px);
     backdrop-filter: blur(0px);
-    
-
 }
 
+/* nav bar hover*/
 .topnav:hover {
-    animation: 1s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeVisible;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    animation: 1s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 unblur_nav;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 }
 
-a {
+/* normal link */
+.normal_link {
+	font-family: sans-serif;
+    
+    font-weight: lighter;
+	color:black;
+	font-size: 14px;
+	text-decoration: none;
+	
+	display: inline-block;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+/* nav link */
+a.top_nav {
     font-family: sans-serif;
     text-transform: uppercase;
     font-weight:lighter;
 	float: left;
 	
-	font-size: 12px;
+	font-size: 14px;
 	margin: 20px;
     position: relative;
     color: black;
     text-decoration: none;
 }
 
-a.active::after {
-    transform: scaleX(1);
-}
-
+/* nav link hover */
 a:hover::after {
     transform: scaleX(1);
 }
 
+/* nav link hover */
 a::after {
     content: "";
     display: block;
@@ -138,123 +138,137 @@ a::after {
     transition: transform 0.25s ease;
 }
 
-.botnav {
-    width: 100%;
-	position: fixed;
-	bottom: 0px;
-	background-color: black;
-
-	/*
-	-webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-	*/
-}
-
-#scroll-text {
-    /* animation properties */
-    -moz-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-    
-    -moz-animation: my-animation 15s linear infinite;
-    -webkit-animation: my-animation 15s linear infinite;
-    animation: my-animation 15s linear infinite;
-    color: black;
-}
-  
-/* for Firefox */
-@-moz-keyframes my-animation {
-    from { -moz-transform: translateX(100%); }
-    to { -moz-transform: translateX(-100%); }
-}
-  
-/* for Chrome */
-@-webkit-keyframes my-animation {
-    from { -webkit-transform: translateX(100%); }
-    to { -webkit-transform: translateX(-100%); }
-}
-  
-@keyframes my-animation {
-    from {
-    -moz-transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-    }
-    to {
-    -moz-transform: translateX(175%);
-    -webkit-transform: translateX(175%);
-    transform: translateX(175%);
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.smallTitle {
-	font-family: sans-serif;
-    
-    font-weight:bold;
-	float: left;
-	color:black;
-	font-size: 12px;
-	margin: 20px;
-	padding-left: 100px;
-	text-decoration: none;
-	width: 75%;
-}
-
-.smallCenteredTitle {
+/* bio text at top */
+.centered_title {
 	font-family: sans-serif;
     
     font-weight:lighter;
 	text-align: center;
 	color:black;
-	font-size: 12px;
+	font-size: 14px;
 	margin: 20px;
 	margin-top: 0;
 	margin-bottom: 0;
 	text-decoration: none;
 }
 
-.smallTitle2 {
+/* bold title */
+.header_text {
+	font-family: sans-serif;
+    
+    font-weight:bold;
+	color:black;
+	font-size: 14px;
+	text-decoration: none;
+	width: 75%;
+	
+	display: block;
+	margin-left: auto;
+  	margin-right: auto;
+	text-align: center;
+}
+
+/* body text */
+.body_text {
+    font-family: sans-serif;
+    
+    font-weight:lighter;
+	color:black;
+	font-size: 14px;
+	text-decoration: none;
+    width: 50%;
+	
+	display: block;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+/* larg padding between texts */
+div.breaker {
+	padding-bottom: 5vw;
+}
+
+/* small padding for bio*/
+div.small_breaker {
+	padding-bottom: 2vw;
+}
+/* super small padding for bio*/
+div.super_small_breaker {
+	padding-bottom: 0.5vw;
+}
+
+/* image */
+img.center {
+	width: 35%;
+	animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 scale_down_img;
+}
+
+/* image hover */
+img.center:hover {
+	width: 37%;
+	animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 scale_up_img;
+	
+}
+
+/* image */
+img.center_big {
+	width: 50%;
+	animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 scale_down_img_big;
+}
+
+/* image hover */
+img.center_big:hover {
+	width: 52%;
+	animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 scale_up_img_big;
+	
+}
+
+/* centered elements */
+.center {
+	display: block;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+/* centered elements */
+.center_big {
+	display: block;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+/* footer */
+.botnav {
+    width: 100%;
+	position: fixed;
+	bottom: 0px;
+	background-color: black;
+}
+
+/* footer text normal */
+.footer_text {
 	font-family: sans-serif;
     
     font-weight:lighter;
 	color:white;
-	font-size: 12px;
+	font-size: 14px;
 	margin: 20px;
 	text-decoration: none;
 }
 
-.smallTitle3 {
+/* footer text link */
+.footer_link {
 	font-family: sans-serif;
 	margin: 20px;
     
     font-weight:lighter;
 	color:white;
-	font-size: 12px;
+	font-size: 14px;
 	text-decoration: none;
 }
 
-.smallTitle3::after {
+/* footer text hover */
+.footer_link::after {
     content: "";
     display: block;
     width: 100%;
@@ -265,189 +279,9 @@ a::after {
     transition: transform 0.25s ease;
 }
 
-
-.aboutText {
-    font-family: sans-serif;
-    
-    font-weight:lighter;
-	float: left;
-	color:black;
-	font-size: 12px;
-	margin: 20px;
-    padding-left: 100px;
-	text-decoration: none;
-    width: 25%;
-}
-
-
-
-
-
-
-
-
-#trailer {
-    height: 10px;
-    width: 10px;
-    border-radius: 10px;
-    /*
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    */
-    background-color: black;
-    
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    z-index: 10000;
-    
-    pointer-events: none;
-    opacity: 0;
-
-}
-
-
-
-
-
-
-
-#scrollImage {
+#video_background {
 	overflow: hidden;
-	opacity: 0%;
-	width: 100%;
-	margin-left: -8px;
-	margin-right: -8px;
-	background: url(Images/dreamdesign.jpg);
-	background-size: 100%;
-	background-position: center;
-	background-attachment: fixed;
-	position: absolute;
-	animation: 3s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeBackground;
-	animation-fill-mode: forwards;
-}
-
-#header2 {
-	overflow: hidden;
-	opacity: 0%;
 	width: 100vw;
-	margin-left: -28px;
-	margin-top: -8px;
 	position: absolute;
-	animation: 3s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeBackground;
 	animation-fill-mode: forwards;
-}
-
-div {
- 	font-family: eurostile-extended,sans-serif;
-	font-weight: 400;
-	font-style: normal;
-}
-
-div.aboutTextLink {
-	margin-left:4vw;
-	margin-right:4vw;
-	padding-left: 10vw;
-	padding-right: 10vw;
-	font-size: 2vw;
-	font-family: eurostile-extended,sans-serif;
-	font-weight: 400;
-	font-style: italic;
-	opacity: 40%;
-	animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeInvisible;
-}
-
-div.aboutTextLink:hover {
-	opacity: 40%;
-	animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeVisible;
-	opacity: 100%
-}
-
-div.mediumFooterText {
-	font-size: 1.5vw;
-	font-family: eurostile-extended,sans-serif;
-	font-weight: 400;
-	font-style: normal;
-	text-align: center;
-}
-
-div.smallFooterText {
-	font-size: 0.75vw;
-	font-family: eurostile-extended,sans-serif;
-	font-weight: 400;
-	font-style: normal;
-	text-align: center;
-	opacity: 40%;
-	animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeInvisible;
-}
-
-div.smallFooterText:hover {
-	opacity: 40%;
-	animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeVisible;
-	opacity: 100%
-}
-
-div.breaker {
-	padding-bottom: 5vw;
-}
-
-div.smallBreaker {
-	padding-bottom: 2vw;
-}
-
-.topnav a.icon {
-	float: right;
-	padding: 0.1vw 0vw 0vw 1vw;
-}
-
-img.hover{
-	opacity: 0%;
-	padding-top: 5vw;
-	padding-right: 6vw;
-	padding-bottom: 5vw;
-	padding-left: 10vw;
-	animation: 3s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 slideInBottom;
-	animation-fill-mode: forwards;
-}
-
-img.icon {
-	padding: 1.4vw 0.2vw 0vw 0vw;
-	opacity: 40%;
-	animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeInvisible;
-	height: 1.4vw;
-	width: 1.4vw;
-}
-
-img.icon:hover {
-	padding: 1.4vw 0.2vw 0vw 0vw;
-	animation: 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeVisible;
-	opacity: 100%
-}
-
-.column {
-	display:block;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-img {
-	width: 35%;
-	animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeSmall;
-}
-
-img:hover {
-	width: 37%;
-	animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 becomeBig;
-	
-}
-
-.center {
-	display: block;
-	margin-left: auto;
-  	margin-right: auto;
 }
