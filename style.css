@@ -216,8 +216,21 @@ img.center_big {
 	animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 scale_down_img_big;
 }
 
+/* image */
+video.center_big {
+	width: 55%;
+	animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 scale_down_img_big;
+}
+
 /* image hover */
 img.center_big:hover {
+	width: 57%;
+	animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 scale_up_img_big;
+	
+}
+
+/* image hover */
+video.center_big:hover {
 	width: 57%;
 	animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 scale_up_img_big;
 	
