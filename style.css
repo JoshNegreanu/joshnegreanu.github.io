@@ -29,40 +29,48 @@
 /* animation to increase image size */
 @keyframes scale_up_img {
 	0% {
-	  width: 35%;
+	  	width: 35%;
+		border-radius: 10px;
 	}
 	100% {
 		width: 37%;
+		border-radius: 30px;
 	}
 }
 
 /* animation to decrease image size */
 @keyframes scale_down_img {
 	0% {
-	  width: 37%;
+	  	width: 37%;
+	  	border-radius: 30px;
 	}
 	100% {
 		width: 35%;
+		border-radius: 10px;
 	}
 }
 
 /* animation to increase image size */
 @keyframes scale_up_img_big {
 	0% {
-	  width: 55%;
+	  	width: 55%;
+	  	border-radius: 10px;
 	}
 	100% {
 		width: 57%;
+		border-radius: 30px;
 	}
 }
 
 /* animation to decrease image size */
 @keyframes scale_down_img_big {
 	0% {
-	  width: 57%;
+	  	width: 57%;
+	 	border-radius: 30px;
 	}
 	100% {
 		width: 55%;
+		border-radius: 10px;
 	}
 }
 
@@ -201,39 +209,42 @@ div.super_small_breaker {
 img.center {
 	width: 35%;
 	animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 scale_down_img;
+	border-radius: 10px;
 }
 
 /* image hover */
 img.center:hover {
 	width: 37%;
 	animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 scale_up_img;
-	
+	border-radius: 30px;
 }
 
 /* image */
 img.center_big {
 	width: 55%;
 	animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 scale_down_img_big;
+	border-radius: 10px;
 }
 
 /* image */
 video.center_big {
 	width: 55%;
 	animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 scale_down_img_big;
+	border-radius: 10px;
 }
 
 /* image hover */
 img.center_big:hover {
 	width: 57%;
 	animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 scale_up_img_big;
-	
+	border-radius: 30px;
 }
 
 /* image hover */
 video.center_big:hover {
 	width: 57%;
 	animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 scale_up_img_big;
-	
+	border-radius: 30px;
 }
 
 /* centered elements */
