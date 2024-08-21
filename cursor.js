@@ -1,9 +1,9 @@
 const circle_element = document.querySelector('.circle');
 const navigation_bar = document.querySelector('.navigation_bar');
 
-const mouse = {x: 0, y: 0};
-const prev_mouse = {x: 0, y: 0};
-const circle = {x: 0, y: 0};
+const mouse = {x: document.documentElement.clientWidth / 2, y: document.documentElement.clientHeight / 2};
+const prev_mouse = {x: document.documentElement.clientWidth / 2, y: document.documentElement.clientHeight / 2};
+const circle = {x: document.documentElement.clientWidth / 2, y: document.documentElement.clientHeight / 2};
 
 let current_scale = 0;
 let current_angle = 0;
@@ -21,6 +21,9 @@ const tick = () => {
     circle.y += (mouse.y - circle.y) * speed;
 
     const translate_transform = `translate(${circle.x}px, ${circle.y}px)`;
+
+    circle_element.style.left = circle.x - 120 + "px";
+    circle_element.style.top = circle.y - 120 + "px";
 
     const delta_mouse_x = (mouse.x - prev_mouse.x);
     const delta_mouse_y = (mouse.y - prev_mouse.y);
@@ -44,7 +47,8 @@ const tick = () => {
 
     const rotate_transform = `rotate(${current_angle}rad)`;
 
-    circle_element.style.transform = `${translate_transform} ${rotate_transform} ${scale_transform}`;
+    //circle_element.style.transform = `${translate_transform} ${rotate_transform} ${scale_transform}`;
+    circle_element.style.transform = `${rotate_transform} ${scale_transform}`;
 
     window.requestAnimationFrame(tick);
 }
