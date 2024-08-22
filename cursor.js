@@ -41,7 +41,7 @@ const tick = () => {
 
     const angle = Math.atan2(delta_mouse_y, delta_mouse_x) * 1.0000;
 
-    if (mouse_velocity > 3) {
+    if (mouse_velocity > 2) {
         current_angle = angle;
     }
 
