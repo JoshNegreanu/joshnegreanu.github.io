@@ -21,11 +21,12 @@ body {
 }
 
 .text {
-	color: black;
+	color: #f8f6ee;
 	font-family: Against;
 	font-size: 90px;
 	justify-content: center;
 	text-align: center;
+	mix-blend-mode: difference;
 }
 
 .circle {
