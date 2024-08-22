@@ -10,6 +10,8 @@ body {
 	margin:0;
 }
 
+
+
 .body_center {
 	cursor: none;
 	display: flex;
@@ -21,9 +23,10 @@ body {
 .text {
 	color: black;
 	font-family: Against;
-	font-size: 80px;
+	font-size: 90px;
 	justify-content: center;
 	text-align: center;
+
 }
 
 .circle {
@@ -35,18 +38,20 @@ body {
 	top: calc(50vh - var(--circle-size)/2);
 	left: calc(50vw - var(--circle-size)/2);
 	pointer-events: none;
-	background-color:#f8f6ee;
-	mix-blend-mode: difference;
+	z-index: -1;
+	background-color: #f8f6ee;
 }
 
 .navigation_bar {
 	align-self: flex-start;
     position: fixed;
     width: 100%;
+	transition: all 0.3s ease;
 }
 
 .navigation_bar:hover {
 	cursor: initial;
+	backdrop-filter: blur(30px);
 }
 
 /* nav link */
