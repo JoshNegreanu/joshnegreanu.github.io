@@ -21,9 +21,9 @@ body {
 }
 
 .text {
-	color: black;
+	color: #f8f6ee;
 	font-family: Against;
-	font-size: 80px;
+	font-size: 65px;
 	justify-content: center;
 	text-align: center;
 }
